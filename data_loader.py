@@ -24,15 +24,6 @@ def load_and_chunk_pdf(path: str):
     return chunks
 
 
-# def embed_chunks(chunks:list[str]):
-#     embeddings=[]
-#     for chunk in chunks:
-#         response=client.embeddings.create(input=chunk,model=EMBED_MODEL)
-#         embedding=response.data[0].embedding
-#         embeddings.append(embedding)
-#     return embeddings
-
-
 def embed_text(texts: list[str]) -> list[list[float]]:
     response = client.embeddings.create(
         model=EMBED_MODEL,
