@@ -39,9 +39,9 @@ class QdrantStorage:
         contexts = []
         sources = set()
         for result in results:
-            paylod = getattr(result, "payload", None) or {}
-            text = paylod.get("text", "")
-            source = paylod.get("source", "")
+            payload = getattr(result, "payload", None) or {}
+            text = payload.get("text", "")
+            source = payload.get("source", "")
             if text:
                 contexts.append(text)
                 sources.add(source)
